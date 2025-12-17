@@ -20,6 +20,7 @@ vim.g.mapleader = "<A>"
 vim.filetype.add { extension = { ebnf = 'ebnf' } }
 
 --[[ Keymappings ]]--
+vim.keymap.set("n", "<A-f>", "<CMD>Ex<CR>")
 vim.keymap.set('n', '<F4>', '<CMD>wqa!<CR>')
 vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
