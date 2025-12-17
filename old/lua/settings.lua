@@ -1,3 +1,4 @@
+--[[
 local set = vim.opt
 local keys = vim.keymap
 
@@ -36,3 +37,4 @@ require("gruvbox").setup({
 			operators = false,
 		}
 })
+]]--

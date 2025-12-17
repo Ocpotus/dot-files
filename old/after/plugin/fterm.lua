@@ -1,3 +1,4 @@
+--[[
 require'FTerm'.setup({
     border = 'single',
     dimensions  = {
@@ -5,3 +6,4 @@ require'FTerm'.setup({
         width = 0.9,
     },
 })
+]]--

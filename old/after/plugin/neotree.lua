@@ -1,3 +1,4 @@
+--[[
 local neotree = require("neo-tree")
 local keys = vim.keymap
 
@@ -19,3 +20,4 @@ neotree.setup({
 		}
 	}
 })
+]]--

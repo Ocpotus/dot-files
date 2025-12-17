@@ -1,16 +1,15 @@
-local lsp = require("lsp-zero")
-
+--[[
 lsp.preset("recommended")
 
 lsp.ensure_installed({
 	'lua_ls',
 	'rust_analyzer',
 	'gopls',
---[[ 	'clangd', ]]
+	'clangd',
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
+vim.lsp.config('lua-language-server', {
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -19,7 +18,8 @@ lsp.configure('lua-language-server', {
 		}
 	}
 })
-
+]] --
+--[[
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -61,8 +61,20 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-lsp.setup()
+--lsp.setup()
+--vim.lsp.config()
 
 vim.diagnostic.config({
 	virtual_text = true
 })
+]] --
+require("mason").setup()
+--[[
+vim.lsp.config('luals', {
+  cmd = {'lua-language-server'},
+  filetypes = {'lua'},
+  root_markers = {'.luarc.json', '.luarc.jsonc'},
+})
+
+vim.lsp.enable('luals')
+]] --

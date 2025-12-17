@@ -1,3 +1,4 @@
+--[[
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
@@ -8,11 +9,8 @@ end
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim' -- Package manager
 	use 'numToStr/FTerm.nvim' -- Simple floating terminal
---[[
-	use {
-		"sheerun/vim-polyglot"
-	}
-]]
+	use 'williamboman/mason.nvim'
+
 	use {
 	    'RubixDev/ebnf',
 	    rtp = 'crates/tree-sitter-ebnf',
@@ -32,31 +30,12 @@ return require('packer').startup(function(use)
 		},
 	}
 
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v1.x',
-		requires = {
-			-- LSP Support --
-			{'neovim/nvim-lspconfig'},             	-- Required
-			{'williamboman/mason.nvim'},           	-- Optional
-			{'williamboman/mason-lspconfig.nvim'}, 	-- Optional
-			-- Autocompletion --
-			{'hrsh7th/nvim-cmp'},         		-- Required
-			{'hrsh7th/cmp-nvim-lsp'},     		-- Required
-			{'hrsh7th/cmp-buffer'},       		-- Optional
-			{'hrsh7th/cmp-path'},         		-- Optional
-			{'saadparwaiz1/cmp_luasnip'}, 		-- Optional
-			{'hrsh7th/cmp-nvim-lua'},     		-- Optional
 
-			{'L3MON4D3/LuaSnip'},             	-- Required
-			{'rafamadriz/friendly-snippets'}, 	-- Optional
-		}
-	}
 
 	use {
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v2.x",
-		requires = { 
+		requires = {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 			"MunifTanjim/nui.nvim",
@@ -76,3 +55,31 @@ return require('packer').startup(function(use)
 		require('packer').sync()
 	end
 end)
+]]--
+--[[
+	use {
+		"sheerun/vim-polyglot"
+	}
+]]--
+	--[[
+	use {
+		'VonHeikemen/lsp-zero.nvim',
+		branch = 'v1.x',
+		requires = {
+			-- LSP Support --
+			{'neovim/nvim-lspconfig'},             	-- Required
+			{'mason-org/mason.nvim'},           	-- Optional
+			{'mason-org/mason-lspconfig.nvim'}, 	-- Optional
+			-- Autocompletion --
+			{'hrsh7th/nvim-cmp'},         		-- Required
+			{'hrsh7th/cmp-nvim-lsp'},     		-- Required
+			{'hrsh7th/cmp-buffer'},       		-- Optional
+			{'hrsh7th/cmp-path'},         		-- Optional
+			{'saadparwaiz1/cmp_luasnip'}, 		-- Optional
+			{'hrsh7th/cmp-nvim-lua'},     		-- Optional
+
+			{'L3MON4D3/LuaSnip'},             	-- Required
+			{'rafamadriz/friendly-snippets'}, 	-- Optional
+		}
+	}
+	]]--
