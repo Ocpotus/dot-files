@@ -17,6 +17,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.tabstop = 8
 vim.opt.expandtab = false
 vim.g.mapleader = "<A>"
+vim.g.netrw_banner = 0
 vim.filetype.add { extension = { ebnf = 'ebnf' } }
 
 --[[ Keymappings ]]--
