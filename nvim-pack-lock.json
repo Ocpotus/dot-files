@@ -31,7 +31,8 @@
     },
     "mini.pairs": {
       "rev": "b1c5a726921b7a8c9321e9a7a208aa0571de5810",
-      "src": "https://github.com/nvim-mini/mini.pairs.git"
+      "src": "https://github.com/nvim-mini/mini.pairs.git",
+      "version": "'stable'"
     },
     "nvim-lspconfig": {
       "rev": "84b6b6c3f13cb34a6c8a0354b0da4c67d8ccf867",
