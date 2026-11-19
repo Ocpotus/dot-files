@@ -1,6 +1,5 @@
 ---@type vim.lsp.Config
 return {
-	on_attach = require("config.util").format_on_save,
 	settings = {
 		["rust-analyzer"] = {
 			check = { command = "clippy" }, -- clippy lints instead of plain `cargo check`
