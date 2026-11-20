@@ -1,1 +1,13 @@
-nvim-pack-lock.json
+# Git
+*
+!.gitignore
+
+!nvim/
+!nvim/**
+nvim/nvim-pack-lock.json
+
+!suckless/
+!suckless/**
+
+!wallpaper/
+!wallpaper/**
