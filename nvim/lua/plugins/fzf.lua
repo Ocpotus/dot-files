@@ -14,3 +14,4 @@ fzf.setup({
 })
 
 vim.keymap.set("n", alt("r"), fzf.live_grep, { desc = "Live grep" })
+vim.keymap.set("v", alt("r"), fzf.grep_visual, { desc = "Visual grep" })
