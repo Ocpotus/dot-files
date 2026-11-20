@@ -1,0 +1,14 @@
+neovim
+git
+curl
+tar
+gzip
+unzip
+fzf
+ripgrep
+tree-sitter-cli
+gcc
+nodejs
+npm
+go
+dotnet-sdk

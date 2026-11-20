@@ -1,0 +1,131 @@
+*keybindings.txt*      Keybindings set by this Neovim config
+
+There is no <Leader>: every custom keybind uses Alt (see `config.util.alt`,
+where alt("ef") becomes <A-e><A-f>). Plugin keys that still use <Leader> fall
+back to Neovim's default leader, a backslash (\).
+
+Keep this file in sync when keymaps change, then run: >vim
+    :helptags ~/.config/nvim/doc
+<
+==============================================================================
+CONTENTS                                              *keybindings-contents*
+
+    1. General ............................... |keybindings-general|
+    2. Search (fzf-lua) ...................... |keybindings-fzf|
+    3. Terminal (toggleterm) ................. |keybindings-terminal|
+    4. LSP ................................... |keybindings-lsp|
+    5. Completion (blink.cmp) ................ |keybindings-completion|
+    6. Dotnet (easy-dotnet) .................. |keybindings-dotnet|
+    7. Tests (neotest) ....................... |keybindings-neotest|
+
+==============================================================================
+1. General                                             *keybindings-general*
+
+Source: lua/config/keymaps.lua
+
+  Mode  Key           Action ~
+  n     <F4>          Save all buffers and quit (|:wqall|!)
+  n     <A-f>         Toggle netrw (|:Rexplore|)
+
+==============================================================================
+2. Search (fzf-lua)                                        *keybindings-fzf*
+
+Source: lua/plugins/fzf.lua
+
+  Mode  Key           Action ~
+  n     <A-r>         Live grep in the current directory
+  v     <A-r>         Grep the visual selection
+  fzf   <A-r>         Close the picker (fzf-lua's default keys stay active)
+
+==============================================================================
+3. Terminal (toggleterm)                              *keybindings-terminal*
+
+Source: lua/plugins/terminal.lua
+
+  Mode  Key           Action ~
+  n, t  <A-i>         Toggle the floating terminal
+
+==============================================================================
+4. LSP                                                     *keybindings-lsp*
+
+Source: lua/config/lsp.lua. Buffer-local, set when a language server
+attaches.
+
+  Mode  Key           Action ~
+  n     gd            Go to definition (first match, via 'tagfunc')
+  n     gD            Go to declaration
+
+Neovim's built-in LSP keys (grn, gra, grr, gri, grt, grx, gO, K, CTRL-W_d,
+insert-mode CTRL-S) are also available. See |lsp-defaults|.
+
+==============================================================================
+5. Completion (blink.cmp)                           *keybindings-completion*
+
+Source: lua/plugins/completion.lua, using blink.cmp's "super-tab" preset.
+Insert mode only.
+
+  Mode  Key           Action ~
+  i     <C-space>     Show menu / toggle documentation
+  i     <C-e>         Cancel completion
+  i     <Tab>         Accept selected item, or jump to next snippet field
+  i     <S-Tab>       Jump to previous snippet field
+  i     <Up> / <C-p>  Select previous item
+  i     <Down> / <C-n>  Select next item
+  i     <C-b>         Scroll documentation up
+  i     <C-f>         Scroll documentation down
+  i     <C-k>         Toggle signature help
+
+==============================================================================
+6. Dotnet (easy-dotnet)                                 *keybindings-dotnet*
+
+Source: lua/plugins/dotnet.lua. Every dotnet key starts with <A-D>
+(Alt+Shift+d), except two that the plugin hard-codes to <Leader>.
+
+Global ~
+  Mode  Key                  Action ~
+  n     <A-D><A-R>           Run project
+  n     <A-D><A-b>           Build, errors to the quickfix list
+  n     <A-D><A-t>           Toggle the test runner window
+
+Test runner window (buffer-local) ~
+  Mode  Key                  Action ~
+  n     <A-D><A-r>           Run test under cursor
+  n     <A-D><A-a><A-r>      Run all tests
+  n     <A-D><A-d>           Debug test (needs nvim-dap)
+  n     <A-D><A-p>           Peek stack trace of failed test
+  n     <A-D><A-g>           Go to file
+  n     <A-D><A-e>           Show build errors
+  n     o                    Expand / collapse node
+  n     E                    Expand node and all children
+  n     W                    Collapse node and all children
+  n     ]f / [f              Next / previous failing test (dot-repeatable)
+  n     <C-r>                Refresh test runner node
+  n     <C-c>                Cancel in-flight operation
+  n     q                    Close window
+
+After |:Dotnet| outdated in a project file (buffer-local) ~
+  Mode  Key                  Action ~
+  n     <A-D><A-p><A-u>      Upgrade package under cursor
+  n     <A-D><A-p><A-a>      Upgrade all outdated packages
+
+Hard-coded by the plugin, cannot be remapped through options ~
+  Mode  Key                  Action ~
+  n     \ar                  Add project reference (.csproj / .fsproj)
+  n     \gf                  Go to source (test result / stack trace popups)
+  n     <CR> / gf            Jump to stack frame under cursor (same popups)
+
+==============================================================================
+7. Tests (neotest)                                     *keybindings-neotest*
+
+Source: lua/plugins/dotnet.lua
+
+  Mode  Key           Action ~
+  n     <A-t><A-t>    Run nearest test
+  n     <A-t><A-f>    Run all tests in the current file
+  n     <A-t><A-l>    Re-run the last test
+  n     <A-t><A-x>    Stop the running test
+  n     <A-t><A-s>    Toggle the summary window
+  n     <A-t><A-o>    Show output of the test under cursor
+  n     <A-t><A-p>    Toggle the output panel
+
+ vim:tw=78:ts=8:noet:ft=help:norl:

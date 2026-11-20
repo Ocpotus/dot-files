@@ -1,11 +1,12 @@
 -- Per-server overrides live in after/lsp/<name>.lua (loaded last, so they win over) nvim-lspconfig's defaults
 -- NOTE: When tsgo gets more features and a good vue server/plugin is available, replace vue_ls and vtsls with it.
 -- 	 Treesitter and Mason will need to be updated when this happens.
-vim.lsp.enable({ "lua_ls", "clangd", "gopls", "rust_analyzer", "roslyn_ls", "vue_ls", "vtsls", "eslint" })
+-- C# Roslyn is started by easy-dotnet (client "easy_dotnet"), not enabled here
+vim.lsp.enable({ "lua_ls", "clangd", "gopls", "rust_analyzer", "vue_ls", "vtsls", "eslint" })
 
 -- Servers whose formatter runs on every write
 -- typescript/javascript formatting not enabled
-local format_on_save = { gopls = true, rust_analyzer = true, roslyn_ls = true }
+local format_on_save = { gopls = true, rust_analyzer = true, easy_dotnet = true }
 
 vim.diagnostic.config({
 	virtual_text = { prefix = "■", source = "if_many" },

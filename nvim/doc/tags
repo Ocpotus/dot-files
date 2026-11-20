@@ -1,0 +1,9 @@
+keybindings-completion	keybindings.txt	/*keybindings-completion*
+keybindings-contents	keybindings.txt	/*keybindings-contents*
+keybindings-dotnet	keybindings.txt	/*keybindings-dotnet*
+keybindings-fzf	keybindings.txt	/*keybindings-fzf*
+keybindings-general	keybindings.txt	/*keybindings-general*
+keybindings-lsp	keybindings.txt	/*keybindings-lsp*
+keybindings-neotest	keybindings.txt	/*keybindings-neotest*
+keybindings-terminal	keybindings.txt	/*keybindings-terminal*
+keybindings.txt	keybindings.txt	/*keybindings.txt*

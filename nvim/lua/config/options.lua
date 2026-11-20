@@ -17,7 +17,6 @@ o.smartcase = true
 
 -- Editing
 o.smartindent = true
-o.tabstop = 4
 o.clipboard = "unnamedplus"
 o.updatetime = 50
 

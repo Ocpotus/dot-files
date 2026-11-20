@@ -1,5 +1,5 @@
--- Merged over nvim-lspconfig's roslyn_ls (which handles solution loading and
--- diagnostic refresh). Don't set on_attach/on_init here: it would replace those.
+-- Merged over the Roslyn config easy-dotnet builds for its "easy_dotnet" client.
+-- Don't set on_attach/on_init here: easy-dotnet relies on its own.
 ---@type vim.lsp.Config
 return {
 	settings = {
